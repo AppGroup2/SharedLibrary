@@ -5,8 +5,9 @@ def call (String repoUrl) {
 		stages{
 				stage ('1-clone'){
 					steps{
-						checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'groupgit', url: 'https://github.com/AppGroup2/jenkinsproject2.git']])
-
+						//checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'groupgit', url: 'https://github.com/AppGroup2/jenkinsproject2.git']])
+						git branch: 'main',
+							url: "${repoUrl}"
 						}	
 					}
 				stage('2-Group Parallel job'){
