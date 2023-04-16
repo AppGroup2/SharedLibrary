@@ -15,7 +15,7 @@ def call (String repoUrl) {
 						stage('Teeto-sub-job-1'){
 							steps{
 								sh 'lscpu'
-								sh 'echo $SHELL'
+								sh 'sudo systemctl status jenkins'
 							}
 						}
 						stage('Chris'){
